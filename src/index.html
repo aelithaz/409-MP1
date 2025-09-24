@@ -5,151 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AetherWorks — Sustainable Tech Studio</title>
 
-  <!-- Fonts & icons -->
+  <!-- Google font (allowed) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Site styles (compile src/css/main.scss → src/css/main.css) -->
+  <!-- main CSS (compile from scss/main.scss -> css/main.css) -->
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <header>
-    <div id="nav" class="nav-wrap nav-large" role="banner">
+    <div id="nav" class="nav-wrap nav-large" role="banner" aria-expanded="true">
       <nav class="container" role="navigation" aria-label="Main navigation">
         <div class="brand" aria-hidden="false">
           <div class="logo" aria-hidden="true">AW</div>
-          <div style="display:flex;flex-direction:column;justify-content:center">
-            <div style="font-weight:700">AetherWorks</div>
-            <div class="muted" style="font-size:12px">Sustainable tech & community design</div>
+          <div class="brand-text">
+            <div class="brand-title">AetherWorks</div>
+            <div class="brand-sub muted">Sustainable tech & community design</div>
           </div>
         </div>
 
-        <div style="position:relative;display:flex;align-items:center">
+        <div class="nav-right">
           <div class="menu" id="menu" role="menubar" aria-label="Section links">
             <a role="menuitem" href="#hero">Home</a>
-            <a role="menuitem" href="#about">About</a>
             <a role="menuitem" href="#services">Services</a>
             <a role="menuitem" href="#carousel">Projects</a>
-            <a role="menuitem" href="#team">Team</a>
+            <a role="menuitem" href="#fixed-bg">Approach</a>
             <a role="menuitem" href="#contact">Contact</a>
           </div>
-
-          <!-- indicator moves under the active menu item -->
-          <div id="navIndicator" class="nav-indicator" aria-hidden="true"></div>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO (vertically centered) -->
+    <!-- HERO -->
     <section id="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero-card center-vertical" style="height:360px">
-          <h2 id="hero-title" class="reveal">Designing sustainable tech for everyday life</h2>
-          <p class="reveal muted">AetherWorks blends human-centered design, low-power embedded systems, and community programs to build resilient solutions.</p>
-          <div class="cta-row reveal">
-            <a class="btn" href="#services">Our Services</a>
-            <button class="btn" id="openModal">Join newsletter</button>
+      <div class="container hero-grid">
+        <div class="hero-left center-vertical">
+          <div class="hero-content">
+            <h1 id="hero-title" class="reveal">Designing resilient, low-power technology</h1>
+            <p class="lead reveal">We prototype hardware, deploy low-power IoT, and teach communities to maintain the tools — field-tested, repairable, and responsible.</p>
+
+            <div class="cta-row reveal">
+              <a class="btn" href="#carousel">Selected projects</a>
+              <button class="btn ghost" id="openModal">Stay informed</button>
+            </div>
+
+            <div class="meta-row reveal">
+              <div class="meta muted">Workshops • Open hardware • Field pilots</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right reveal">
+          <div class="quick-stats">
+            <div><strong>120+</strong><span>devices deployed</span></div>
+            <div><strong>45</strong><span>community sessions</span></div>
+            <div><strong>24</strong><span>open-source releases</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container">
-        <h2>About AetherWorks</h2>
-        <p class="muted">We prototype hardware and community programs that reduce environmental impact while being practical and affordable.</p>
-      </div>
-    </section>
-
-    <!-- SERVICES (multi-column) -->
+    <!-- SERVICES -->
     <section id="services">
       <div class="container">
-        <h2>What we do</h2>
-        <div class="cols">
-          <div class="feature reveal">
+        <h2>Capabilities</h2>
+        <div class="service-grid reveal">
+          <div class="card">
             <h3>Product Design</h3>
-            <p>Human-centered research, UX flows, and prototypes focusing on accessibility and longevity.</p>
+            <p>Repairable hardware, human-first UX, sustainability checks from day one.</p>
           </div>
-
-          <div class="feature reveal">
-            <h3>Low-power IoT</h3>
-            <p>Long-life environmental sensors and resilient firmware for field deployments.</p>
+          <div class="card">
+            <h3>Low-power Systems</h3>
+            <p>Radios, sensors and firmware tuned for long battery life in the field.</p>
           </div>
-
-          <div class="feature reveal">
+          <div class="card">
             <h3>Community Programs</h3>
-            <p>Open labs and workshops that empower local stewards to operate and maintain sensors.</p>
+            <p>Open labs and workshops that transfer skills and ownership to local stewards.</p>
           </div>
-
-          <div class="feature reveal">
-            <h3>Open Source</h3>
-            <p>Hardware designs, firmware, and docs published so others can adopt and improve.</p>
-          </div>
-
-          <div class="feature reveal">
-            <h3>Consulting</h3>
-            <p>Sustainability assessments and technical strategy for early-stage teams and nonprofits.</p>
-          </div>
-
-          <div class="feature reveal">
-            <h3>Workshops</h3>
-            <p>Hands-on sessions for schools and community groups on sensors & data literacy.</p>
+          <div class="card">
+            <h3>Open Tools</h3>
+            <p>Schematics, firmware, and docs released with reproducible builds and clear licensing.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CAROUSEL / Projects -->
+    <!-- PROJECTS / CAROUSEL -->
     <section id="carousel">
       <div class="container">
         <h2>Selected projects</h2>
 
-        <div class="carousel reveal" id="carouselEl" aria-roledescription="carousel">
+        <div class="carousel" id="carouselEl" aria-roledescription="carousel">
           <div class="slides" id="slides" role="list">
             <article class="slide" role="listitem" aria-roledescription="slide">
               <h3>Project Beacon</h3>
-              <p>Low-power coastal sensors tracking erosion and surf conditions for stewards.</p>
+              <p>Low-power coastal sensors tracking erosion and surf conditions for stewards. Easy diagnostics and long-life batteries.</p>
             </article>
 
             <article class="slide" role="listitem">
               <h3>Commons Gateway</h3>
-              <p>Open Wi-Fi gateway designed for community mesh deployments in small towns.</p>
+              <p>Rugged open-wifi gateway designed for community mesh deployments with remote health telemetry.</p>
             </article>
 
             <article class="slide" role="listitem">
               <h3>GreenKit</h3>
-              <p>Workshop kit for middle-schoolers to learn sensors, data, and energy efficiency.</p>
+              <p>Workshop kit for middle-schoolers to learn sensors, energy budgets, and data-driven decisions.</p>
             </article>
           </div>
 
-          <button class="arrow left" id="prev" aria-label="Previous project"><i class="fa fa-chevron-left"></i></button>
-          <button class="arrow right" id="next" aria-label="Next project"><i class="fa fa-chevron-right"></i></button>
+          <button class="arrow left" id="prev" aria-label="Previous project"><svg class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="arrow right" id="next" aria-label="Next project"><svg class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
         </div>
 
         <div class="dots center" id="dots" aria-hidden="false"></div>
       </div>
     </section>
 
-    <!-- TEAM -->
-    <section id="team">
-      <div class="container">
-        <h2>Team</h2>
-        <div class="team-grid">
-          <div class="feature reveal"><strong>Rae Calder — Founder</strong><p class="muted">Design & community partnerships.</p></div>
-          <div class="feature reveal"><strong>Jordan Park — Lead Engineer</strong><p class="muted">Embedded systems & firmware.</p></div>
-          <div class="feature reveal"><strong>Maya Ortiz — Community Manager</strong><p class="muted">Workshops & outreach.</p></div>
-        </div>
-      </div>
-    </section>
+    <!-- FIXED BACKGROUND — APPROACH -->
+    <section id="fixed-bg" aria-labelledby="approach-title">
+      <div class="overlay">
+        <div class="overlay-inner">
+          <div class="overlay-grid">
+            <div class="overlay-copy">
+              <h2 id="approach-title" class="reveal">Our approach</h2>
+              <p class="reveal">Rapid prototypes, real-world pilots, and continuous learning — we build with communities so systems keep working where it matters.</p>
+            </div>
 
-    <!-- FIXED BACKGROUND -->
-    <section id="fixed-bg">
-      <div class="container overlay">
-        <h2 class="reveal">Approach</h2>
-        <p class="reveal muted">Iterative prototyping + field testing ensures practical, durable solutions.</p>
+            <div class="overlay-side reveal">
+              <div class="stat"><strong>Field-first</strong><span>Prototypes & pilots</span></div>
+              <div class="stat"><strong>Repairable</strong><span>Design that lasts</span></div>
+              <div class="stat"><strong>Open</strong><span>Tools & docs</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -158,7 +147,7 @@
       <div class="container">
         <h2>Demo</h2>
         <div class="video-card reveal">
-          <video controls poster="assets/image.jpg">
+          <video controls poster="assets/aetherworks-poster.svg">
             <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
@@ -167,72 +156,108 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <h2>Contact & Social</h2>
-        <p class="muted">Reach out for partnerships, workshops, or press.</p>
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-left">
+          <div class="contact-card reveal">
+            <h2 id="contact-title">Contact</h2>
+            <p class="muted">Partnerships, workshops, and open resources — <a href="mailto:hello@aetherworks.example">hello@aetherworks.example</a></p>
 
-        <div class="contact-layout">
-          <form id="contactForm" class="contact-form">
-            <label class="muted">Name <input name="name" required placeholder="Your name"></label>
-            <label class="muted">Email <input type="email" name="email" required placeholder="you@example.com"></label>
-            <label class="muted">Message <textarea name="message" rows="4" required placeholder="Short message"></textarea></label>
-            <div class="form-actions">
-              <button class="btn" type="submit">Send</button>
-              <button class="btn alt" type="button" id="clearForm">Clear</button>
-            </div>
-            <div id="formNote" class="muted small">Demo only: form is client-side. Hook to a backend to receive messages.</div>
-          </form>
+            <form id="contactForm" class="contact-form stacked" aria-label="Contact form">
+              <label class="muted">
+                Name
+                <input name="name" placeholder="Your name" required>
+              </label>
 
-          <aside class="contact-aside">
-            <div class="social-row">
-              <a class="icon" href="https://twitter.com/" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fa fa-twitter"></i></a>
-              <a class="icon" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-              <a class="icon" href="https://github.com/" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa fa-github"></i></a>
-            </div>
-            <div class="muted">
-              <strong>Email</strong>
-              <div><a href="mailto:hello@aetherworks.example">hello@aetherworks.example</a></div>
-              <strong style="margin-top:8px;display:block">Location</strong>
-              <div>Springfield • Open studio by appointment</div>
-            </div>
-          </aside>
+              <label class="muted">
+                Email
+                <input type="email" name="email" placeholder="you@example.com" required>
+              </label>
+
+              <label class="muted">
+                Message
+                <textarea name="message" rows="4" placeholder="Short message" required></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button class="btn" type="submit">Send</button>
+                <button class="btn alt" type="button" id="clearForm">Clear</button>
+                <div id="formNote" class="muted small">Demo only: the form is client-side.</div>
+              </div>
+            </form>
+          </div>
         </div>
+
+        <aside class="contact-right">
+          <div class="newsletter-card reveal">
+            <h3>Join our newsletter</h3>
+            <p>Subscribe for field notes, release announcements, and workshop dates — a short monthly note.</p>
+
+            <div class="newsletter-row">
+              <input class="newsletter-input" placeholder="you@example.com" aria-label="Newsletter email">
+              <button class="btn subscribe" id="subscribeBtn">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="socials">
+            <!-- Inline SVGs (fill=currentColor so CSS color controls them) -->
+            <a class="icon-link" href="https://twitter.com/AetherWorks" target="_blank" aria-label="Twitter" rel="noopener">
+              <!-- Twitter (Bootstrap Icons - MIT) -->
+              <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true" class="icon-svg">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+              </svg>
+            </a>
+
+            <a class="icon-link" href="https://www.linkedin.com/company/aetherworks" target="_blank" aria-label="LinkedIn" rel="noopener">
+              <!-- LinkedIn (Bootstrap Icons - MIT) -->
+              <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true" class="icon-svg">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+              </svg>
+            </a>
+
+            <a class="icon-link" href="https://github.com/aetherworks" target="_blank" aria-label="GitHub" rel="noopener">
+              <!-- GitHub (Bootstrap Icons - MIT) -->
+              <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true" class="icon-svg">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+              </svg>
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
   </main>
 
-  <!-- Modal (newsletter) -->
+  <!-- Modal -->
   <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="panel">
       <h3 id="modal-title">AetherWorks Newsletter</h3>
-      <p class="muted">Get occasional updates on projects and workshops.</p>
+      <p class="muted">Occasional updates: workshops, releases, and field notes.</p>
 
       <form id="newsletter" class="newsletter-form">
-        <input name="email" required type="email" placeholder="you@example.com">
+        <input name="email" required type="email" placeholder="you@example.com" aria-label="newsletter email">
         <button class="btn" type="submit">Subscribe</button>
       </form>
 
-      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+      <div class="panel-actions">
         <button id="closeModal" class="btn alt">Close</button>
       </div>
     </div>
   </div>
 
   <footer>
-    <div class="container footer-grid">
-      <div>
+    <div class="container footer-min">
+      <div class="footer-left">
         <strong>AetherWorks</strong>
         <div class="muted">Sustainable tech & community design</div>
       </div>
-      <div class="socials">
-        <a class="icon" href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
-        <a class="icon" href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
-        <a class="icon" href="mailto:hello@aetherworks.example"><i class="fa fa-envelope"></i></a>
+      <div class="footer-right">
+        <a class="icon-link small" href="mailto:hello@aetherworks.example" aria-label="Email">
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.9 7-4.9V4a1 1 0 0 0-1-1H2z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
